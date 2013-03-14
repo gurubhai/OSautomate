@@ -28,7 +28,7 @@ install_basic_packages(){
 	}
 	
 enable_ip_forwarding() {
-	sudo sed -i 's/^#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
+	sudo sed -i /'s/^#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g/' /etc/sysctl.conf
 	sudo sysctl net.ipv4.ip_forward=1
 	}
 	
@@ -36,7 +36,7 @@ configure_ntp(){
 	echo "***************************"
 	echo "***** CONFIGURING NTP *****"
 	echo "***************************"
-	sudo sed -i 's/server ntp.ubuntu.com/server ntp.ubuntu.com\nserver 127.127.1.0\nfudge 127.127.1.0 stratum 10/g' /etc/ntp.conf
+	sudo sed -i /'s/server ntp.ubuntu.com/server ntp.ubuntu.com\nserver 127.127.1.0\nfudge 127.127.1.0 stratum 10/g/' /etc/ntp.conf
     sudo service ntp restart
 }
 
