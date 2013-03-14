@@ -33,9 +33,9 @@ enable_ip_forwarding() {
 	}
 	
 configure_ntp(){
-	echo"***************************"
-	echo"***** CONFIGURING NTP *****"
-	echo"***************************"
+	echo "***************************"
+	echo "***** CONFIGURING NTP *****"
+	echo "***************************"
 	sudo sed -i 's/server ntp.ubuntu.com/server ntp.ubuntu.com\nserver 127.127.1.0\nfudge 127.127.1.0 stratum 10/g' /etc/ntp.conf
     sudo service ntp restart
 }
