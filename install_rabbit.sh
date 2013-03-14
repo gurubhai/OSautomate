@@ -12,6 +12,9 @@ fi
 install_rabbit()
 {
 
+	echo "********************************"
+	echo "***** INSTALLING RABBITMQ ******"
+	echo "********************************"
 	sudo apt-get install rabbitmq-server
 	
 }

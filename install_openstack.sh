@@ -2,7 +2,7 @@
 
 case $1 in
 		"controller")
-				./common_services.sh 2>&1 >>/tmp/install.log
+				./common_services.sh
 				;;
 				
 		*)
