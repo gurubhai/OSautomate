@@ -39,30 +39,30 @@ drop_db()
 
 create_db()
 {
-		#Create Databases.
+	#Create Databases.
 		
-		#NOVA 
-		mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE nova;"
-		mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON nova.* TO /'novadbadmin/'@/'%/' IDENTIFIED BY /'dieD9Mie/';"
+	#NOVA 
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE nova;"
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON nova.* TO \"$NOVADBADMIN\"@\"%\" IDENTIFIED BY \"$NOVADBPASS\";"
 	
-		#GLANCE
-		mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE glance;"
-		mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON glance.* TO /'glancedbadmin/'@/'%/' IDENTIFIED BY /'ohC3teiv/';"
+	#GLANCE
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE glance;"
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON glance.* TO \"$GLANCEDBADMIN\"@\"%\" IDENTIFIED BY \"$GLANCEDBPASS\";"
+	
+	#KEYSTONE
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE keystone;"
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON keystone.* TO \"$KEYSTONEDBADMIN\"@\"%\" IDENTIFIED BY \"$KEYSTONEDBPASS\";"
 		
-		#KEYSTONE
-		mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE keystone;"
-		mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON keystone.* TO /'keystonedbadmin/'@/'%/' IDENTIFIED BY /'Ue0Ud7ra/';"
+	#QUANTUM
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE quantum;"
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON quantum.* TO \"$QUANTUMDBADMIN\"@\"%\" IDENTIFIED BY \"$QUANTUMDBPASS\";"
 		
-		#QUANTUM
-		mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE quantum;"
-		mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON quantum.* TO /'quantumdbadmin/'@/'%/' IDENTIFIED BY /'wozohB8g/';"
-		
-		#HORIZON
-		mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE cinder;"
-		mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON cinder.* TO /'cinderdbadmin/'@/'%/' IDENTIFIED BY /'ceeShi4O/';"
+	#HORIZON
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE cinder;"
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON cinder.* TO TO \"$CINDERDBADMIN\"@\"%\" IDENTIFIED BY \"$CINDERDBPASS\";"
 	
 	
-	}
+}
 
 
 # Main

@@ -6,7 +6,7 @@ then
 	. osconfig.conf
 else
 	 echo "Configuration file not found. Please create osconfig.conf"
-         exit 1
+     exit 1
 fi
 
 configure_cloud_archive(){
