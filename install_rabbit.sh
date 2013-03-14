@@ -9,15 +9,15 @@ else
      exit 1
 fi
 
-install_rabbit()
+install_rabbitmq()
 {
 
 	echo "********************************"
 	echo "***** INSTALLING RABBITMQ ******"
 	echo "********************************"
-	sudo apt-get install rabbitmq-server
+	sudo apt-get -y install rabbitmq-server
 	
 }
 
 #Main
-install_rabbit
+install_rabbitmq
