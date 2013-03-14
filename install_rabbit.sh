@@ -9,6 +9,18 @@ else
      exit 1
 fi
 
+configure_cloud_archive(){
+	
+	sudo rm -f /etc/apt/sources.list.d/cloud.list
+	sudo touch /etc/apt/sources.list.d/cloud.list
+	echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/folsom main" | sudo tee -a /etc/apt/sources.list.d/cloud.list
+	sudo apt-get -y install ubuntu-cloud-keyring
+	echo "Now updating and upgrading...Please have a cup coffee"
+	sudo apt-get -y update 
+	sudo apt-get -y upgrade
+}
+
+	
 install_rabbitmq()
 {
 
